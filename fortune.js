@@ -8,18 +8,17 @@ app.day = '';
 
 app.getData = function() {
 	$.ajax({
+		// url: 'http://www.vivienilett.com/fortuneAPI/converter.php',
 		url: 'http://www.vivienilett.com/fortuneAPI/converter.php',
 		type: 'GET',
 		dataType: 'json',
 		success: function(data){
-			// Normalize the data
+			// Normalize the data from the json file
 			var horoscopes = data.channel.item;
 			for (var i = 0; i < horoscopes.length; i++) {
 				var sign = horoscopes[i].title.split(" ")[0].toLowerCase();
 				app.horoscopes[sign] = horoscopes[i];
 			};
-			// console.log('getData works');
-			// Now we can do whatever with our data...
 
 			findBirthday();
 			getZodiacFromDate();
@@ -122,10 +121,6 @@ var getZodiacFromDate = function() {
 		return app.horoscopes.capricorn.description;
 	}    		     		    		    		     		    		     		     		
 } // ends getZodiacFromDate 
-
-
-// THEN PASS ZODIAC RESULT ON TO PAGE (.fortuneContainer p)
-
 
 
 app.init = function() {

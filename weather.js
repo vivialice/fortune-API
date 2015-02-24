@@ -9,12 +9,17 @@ weatherApp.getWeather = function(){
 		type : 'GET',
 		dataType : 'json',
 		success : function(data) {
-			console.log(data);
-			weatherApp.data = weatherApp.getWeather.current_observation;
+			// console.log(data.current_observation.feelslike_c);
+		    weatherApp.temp = parseInt(data.current_observation.feelslike_c);
+		    console.log(weatherApp.temp);
+		    convertResult();
+
+		    // weatherApp. = convertResult();
+		    $('.temperature').html('It feels like ' + weatherApp.temp + '&deg;C in ' + weatherApp.city + '!');
+		    // $('.location').html(weatherApp.city);
 		}
 	}); //end ajax
 }
-
 
 // GET CURRENT LOCATION FROM USER //
 weatherApp.geo = function() {
@@ -22,12 +27,11 @@ weatherApp.geo = function() {
 
 	weatherApp.lat = position.coords.latitude;
 	weatherApp.lon = position.coords.longitude;
-	  console.log(position);
+
 	  console.log(weatherApp.lat);
 	  console.log(weatherApp.lon);
-});
-}	
-
+	});
+}
 
 function initialize() {
 	geocoder = new google.maps.Geocoder();
@@ -39,11 +43,12 @@ function codeLatLng() {
   geocoder.geocode({'latLng': latlng}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-        // console.log(results[1].formatted_address);
         weatherApp.city = results[1].address_components[3].long_name;
         weatherApp.pro = results[1].address_components[5].long_name;
         console.log(results[1].address_components[3].long_name);
         console.log(results[1].address_components[5].long_name);
+
+        weatherApp.getWeather();
       } else {
         alert('No results found');
       }
@@ -51,17 +56,36 @@ function codeLatLng() {
       alert('Geocoder failed due to: ' + status);
     }
   });
-  // weatherApp.getWeather();
+  
 }
  
 // does this even matter? I don't know
 google.maps.event.addDomListener(window, 'load');
 
+
 // DETERMINE ICON OUTPUT 
-if (weatherApp.data.feelslike_c >= -1) {
-	console.log(':)');
-} else if (weatherApp.data.feelslike_c )
+function convertResult() {
+
+	if (weatherApp.temp >= 0) {
+		console.log(':|');
+	} else if (weatherApp.temp <= -1) {
+		console.log(':(');
+		console.log('REAL SHIT WEATHER');
+	} else if (weatherApp.temp <= -15) {
+		console.log(":'(");
+	} else if (weatherApp.temp >= 20) {
+		console.log(':D');
+	}
+}
+
 
 $(function() {
 	weatherApp.geo();
+	initialize();
+
+	$('input.submit').on('click', function(e) {
+		e.preventDefault();
+		// console.log('input clicked');
+		codeLatLng();
+	});
 });
