@@ -19,7 +19,7 @@ weatherApp.getWeather = function(){
 		    // $('.location').html(weatherApp.city);
 		}
 	}); //end ajax
-}
+} // end .getWeather
 
 // GET CURRENT LOCATION FROM USER //
 weatherApp.geo = function() {
@@ -31,11 +31,11 @@ weatherApp.geo = function() {
 	  console.log(weatherApp.lat);
 	  console.log(weatherApp.lon);
 	});
-}
+} // end .geo
 
 function initialize() {
 	geocoder = new google.maps.Geocoder();
-}
+} // end .initalize
 
 // REVERSE GEOCODE TO GET LOCATION // 
 function codeLatLng() {
@@ -57,7 +57,7 @@ function codeLatLng() {
     }
   });
   
-}
+} // end .codeLatLng
  
 // does this even matter? I don't know
 google.maps.event.addDomListener(window, 'load');
@@ -66,23 +66,25 @@ google.maps.event.addDomListener(window, 'load');
 // DETERMINE ICON OUTPUT 
 function convertResult() {
 
-	if (weatherApp.temp >= 0) {
-		console.log(':|');
-	} else if (weatherApp.temp <= -1) {
-		console.log(':(');
-		console.log('REAL SHIT WEATHER');
-	} else if (weatherApp.temp <= -15) {
-		console.log(":'(");
-	} else if (weatherApp.temp >= 20) {
+	if (weatherApp.temp >= 20 && weatherApp.temp <=35) {
 		console.log(':D');
+	} else if (weatherApp.temp >= 1 && weatherApp.temp <= 19) {
+		console.log(':)');
+	} else if (weatherApp.temp <= 0 && weatherApp.temp >= -15) {
+		console.log(':|');
+	} else if (weatherApp.temp <= -16 && weatherApp.temp >= -19) {
+		console.log(":(");
+	} else if (weatherApp.temp <= -20 && weatherApp.temp >= -50 || weatherApp.temp > 36) {
+		console.log(":'(");
 	}
-}
+} // end .convertResult
 
 
 $(function() {
 	weatherApp.geo();
 	initialize();
 
+	// run codeLatLng(); on click to wait for geolocation to find coordinates 
 	$('input.submit').on('click', function(e) {
 		e.preventDefault();
 		// console.log('input clicked');

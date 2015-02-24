@@ -36,7 +36,7 @@ function findBirthday() {
 		app.day = parseInt($('.day option:selected').val());
 		var signData = getZodiacFromDate();
 		// pull info and append into div 
-		$('.fortune').html(signData);
+		$('.fortune').html(signData).fadeIn(200);
 		// remove all but first p tag in array
 		$('.fortune p').not(':first').remove();
 	});
