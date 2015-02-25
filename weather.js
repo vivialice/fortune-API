@@ -50,11 +50,9 @@ function codeLatLng() {
 
         weatherApp.getWeather();
       } else {
-        alert('No results found');
+        alert('Location not found. Weather could not be calculated.');
       }
-    } else {
-      alert('Geocoder failed due to: ' + status);
-    }
+    } 
   });
   
 } // end .codeLatLng
@@ -68,14 +66,19 @@ function convertResult() {
 
 	if (weatherApp.temp >= 20 && weatherApp.temp <=35) {
 		console.log(':D');
+		$('.weatherResult').html('<img src="images/supersmile.svg" width="200px">');
 	} else if (weatherApp.temp >= 1 && weatherApp.temp <= 19) {
 		console.log(':)');
+		$('.weatherResult').html('<img src="images/smile.svg" width="200px">');
 	} else if (weatherApp.temp <= 0 && weatherApp.temp >= -15) {
 		console.log(':|');
+		$('.weatherResult').html('<img src="images/meh.svg" width="200px">');
 	} else if (weatherApp.temp <= -16 && weatherApp.temp >= -19) {
 		console.log(":(");
+		$('.weatherResult').html('<img src="images/sad.svg" width="200px">');
 	} else if (weatherApp.temp <= -20 && weatherApp.temp >= -50 || weatherApp.temp > 36) {
 		console.log(":'(");
+		$('.weatherResult').html('<img src="images/cry.svg" width="200px">');
 	}
 } // end .convertResult
 

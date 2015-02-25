@@ -132,9 +132,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
+html, body {
   margin: 0;
-  font-size: 12px; }
+  font-size: 12px;
+  height: 100%; }
 
 img {
   max-width: 100%; }
@@ -149,7 +150,7 @@ h2 {
   background-image: url("images/zodiac_app_pattern.png");
   background-repeat: repeat-y;
   background-size: 100%;
-  height: 100vh;
+  height: 100%;
   float: left; }
 
 .leftContainer {
@@ -172,8 +173,7 @@ h2 {
   width: 60%;
   text-align: center;
   margin: 0 auto;
-  overflow: hidden;
-  height: 100vh; }
+  height: 100%; }
   .middleContainer header {
     height: 175px; }
     .middleContainer header img {
@@ -277,8 +277,7 @@ h2 {
       color: dimgrey; }
   .middleContainer .stuffLeft, .middleContainer .stuffRight {
     float: left;
-    width: 50%;
-    overflow: hidden; }
+    width: 50%; }
   .middleContainer .stuffRight {
     border-left: 9px solid black; }
 
