@@ -229,6 +229,8 @@ h2 {
       padding: 0 2%; }
     .middleContainer .formContainer input.submit:hover {
       background: mediumvioletred; }
+    .middleContainer .formContainer input.loading {
+      cursor: wait; }
   .middleContainer .weatherContainer, .middleContainer .fortuneContainer {
     width: 50%;
     float: left;
