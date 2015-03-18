@@ -174,7 +174,7 @@ h2 {
   text-align: center;
   margin: 0 auto;
   overflow: hidden;
-  height: 100%; }
+  height: auto; }
   .middleContainer header {
     height: 175px; }
     .middleContainer header img {
@@ -274,7 +274,7 @@ h2 {
       -webkit-animation: spin 2s linear infinite;
       -webkit-transform-origin: 50% 50%; }
     .middleContainer .weatherContainer p {
-      margin-top: 2%;
+      margin-top: 3%;
       font-family: 'Libre Baskerville', serif;
       font-size: 1.3rem;
       color: dimgrey; }
@@ -343,9 +343,6 @@ h2 {
   .middleContainer .weatherContainer h2 {
     margin-top: 8%; } }
 @media (max-width: 400px) {
-  body {
-    height: none; }
-
   .middleContainer {
     width: 100%; }
     .middleContainer .formContainer {
