@@ -164,8 +164,8 @@ h2 {
   border-left: 9px solid black; }
   .rightContainer img.planet {
     position: absolute;
-    top: 230px;
-    right: 190px;
+    top: 200px;
+    right: 150px;
     width: 125px; }
 
 .middleContainer {
@@ -173,6 +173,7 @@ h2 {
   width: 60%;
   text-align: center;
   margin: 0 auto;
+  overflow: hidden;
   height: 100%; }
   .middleContainer header {
     height: 175px; }
@@ -244,7 +245,7 @@ h2 {
       margin-bottom: 5%; }
     .middleContainer .fortuneContainer p {
       font-family: 'Libre Baskerville', serif;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       line-height: 150%;
       color: dimgrey; }
     .middleContainer .fortuneContainer img.eye {
@@ -273,14 +274,109 @@ h2 {
       -webkit-animation: spin 2s linear infinite;
       -webkit-transform-origin: 50% 50%; }
     .middleContainer .weatherContainer p {
-      margin-top: 0;
+      margin-top: 2%;
       font-family: 'Libre Baskerville', serif;
-      font-size: 1rem;
+      font-size: 1.3rem;
       color: dimgrey; }
+    .middleContainer .weatherContainer p.temperature {
+      margin: 0; }
   .middleContainer .stuffLeft, .middleContainer .stuffRight {
     float: left;
     width: 50%; }
   .middleContainer .stuffRight {
     border-left: 9px solid black; }
+
+@media (max-width: 1000px) {
+  .rightContainer img.planet {
+    right: 100px; }
+
+  .middleContainer .fortuneContainer p {
+    font-size: 1.2rem; } }
+@media (max-width: 900px) {
+  .middleContainer header {
+    height: 155px; }
+  .middleContainer .fortuneContainer img.eye {
+    right: -45px;
+    width: 100px; }
+  .middleContainer .fortuneContainer img.triangle {
+    width: 70px;
+    top: -45px; }
+  .middleContainer .fortuneContainer img.moon {
+    bottom: -55px;
+    left: 15px; }
+  .middleContainer .formContainer {
+    height: 170px; }
+
+  .rightContainer img.planet {
+    right: 90px;
+    width: 100px; } }
+@media (max-width: 800px) {
+  h2 {
+    font-size: 1.2rem; }
+
+  .middleContainer .formContainer {
+    height: 150px; } }
+@media (max-width: 750px) {
+  .leftContainer, .rightContainer {
+    display: none; }
+
+  .middleContainer {
+    width: 100vw; }
+    .middleContainer .formContainer {
+      height: 180px; }
+    .middleContainer .fortuneContainer p {
+      font-size: 1.3rem; } }
+@media (max-width: 550px) {
+  .middleContainer .formContainer form {
+    padding: 5% 0; }
+  .middleContainer .fortuneContainer p {
+    font-size: 1.2rem; } }
+@media (max-width: 450px) {
+  .middleContainer header {
+    height: 145px; }
+  .middleContainer .fortuneContainer {
+    padding: 0 4%; }
+    .middleContainer .fortuneContainer img.eye {
+      width: 90px; }
+    .middleContainer .fortuneContainer img.moon {
+      width: 80px; }
+  .middleContainer .weatherContainer h2 {
+    margin-top: 8%; } }
+@media (max-width: 400px) {
+  body {
+    height: none; }
+
+  .middleContainer {
+    width: 100%; }
+    .middleContainer .formContainer {
+      height: 210px; }
+      .middleContainer .formContainer form.birthday {
+        padding: 2% 0; }
+        .middleContainer .formContainer form.birthday select.month {
+          width: 90%;
+          margin-bottom: 2%; }
+        .middleContainer .formContainer form.birthday select.day {
+          width: 90%; }
+        .middleContainer .formContainer form.birthday input.submit {
+          margin-top: 3%; }
+    .middleContainer .fortuneContainer h2 {
+      margin-top: 6%; }
+    .middleContainer .fortuneContainer img.eye {
+      display: none; }
+    .middleContainer .fortuneContainer p {
+      font-size: 1.4rem; }
+    .middleContainer .fortuneContainer, .middleContainer .weatherContainer {
+      height: inherit;
+      width: 100%;
+      float: none; }
+    .middleContainer .weatherContainer {
+      border-left: none; }
+      .middleContainer .weatherContainer h2 {
+        margin-top: 5%; }
+      .middleContainer .weatherContainer p.temperature {
+        font-size: 1.4rem; } }
+@media (max-width: 320px) {
+  .middleContainer header {
+    height: 135px; } }
 
 /*# sourceMappingURL=output.css.map */

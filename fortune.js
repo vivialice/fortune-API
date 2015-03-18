@@ -24,7 +24,7 @@ app.getData = function() {
 			getZodiacFromDate();
 
 			// take off loading..
-			$('.submit').removeAttr('disabled').val('Search!!!').removeClass('loading');
+			$('.submit').removeAttr('disabled').val('Get your fortune').removeClass('loading');
 		}
 	});
 }
