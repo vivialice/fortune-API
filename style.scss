@@ -8,7 +8,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 html, body {
  	margin: 0;
  	font-size: 12px;
- 	height: 100%;
 }
 
 img {
@@ -26,8 +25,9 @@ h2 {
 	background-image: url('images/zodiac_app_pattern.png');
 	background-repeat: repeat-y;
 	background-size: 100%;
-	height: 100%;
+	height: 100vh;
 	float: left;
+	overflow: hidden;
 }
 
 .leftContainer {

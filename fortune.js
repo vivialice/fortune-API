@@ -8,8 +8,7 @@ app.day = '';
 
 app.getData = function() {
 	$.ajax({
-		// url: 'http://vivienilett.com/fortune/converter.php',
-		url: './converter.php',
+		url: 'http://vivienilett.com/fortune/converter.php',
 		type: 'GET',
 		dataType: 'json',
 		success: function(data){

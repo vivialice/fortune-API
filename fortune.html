@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Have a Good Day</title>
 </head>
-<body>
+<body class="clearfix">
 	
 	<!-- LEFT COLUMN -->
 	<div class="leftContainer">	
@@ -35,7 +35,6 @@
 
 		<div class="formContainer">
 			<h2>What's your birthday?</h2>
-			<!-- <img class="yin" src="images/zodiac_app_yin.svg" alt=""> -->
 			<!-- form to get user's birthdate -->
 			<form class="birthday">
 				<select name="month" class="month">
@@ -105,7 +104,6 @@
 			<h2>Today's weather</h2>
 				<div class="weatherResult">
 					<p>getting weather...</p>
-					<!-- <img src="images/sun.svg" class="emoji" alt=""> -->
 				</div><!-- /.weatherResult -->
 				<p class="temperature"><!-- weather goes here --> </p>
 		</div><!-- /.weatherContainer -->
@@ -132,6 +130,21 @@
 	<script src="date.js"></script>
 	<script src="weather.js"></script>
 
+	<script>
+	$(function() {
+		setTimeout(function() {
+			var $containers = $('.rightContainer,.leftContainer');
+			var $midContainer = $('.middleContainer');
+			size();
+			$(window).on('resize', function() {
+				size();
+			});
 
+			function size() {
+				$containers.height($midContainer.height());
+			}
+		},500);
+	});
+	</script>
 </body>
 </html>
